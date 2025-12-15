@@ -5,7 +5,6 @@ import { Task } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { format } from 'date-fns';
 
 interface TaskFormProps {
   onAddTask: (task: Omit<Task, 'id' | 'createdAt' | 'completed'>) => void;
@@ -105,7 +104,7 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
               <label className="block text-sm font-medium mb-1">Business</label>
               <select
                 value={business}
-                onChange={(e) => setBusiness(e.target.value as any)}
+                onChange={(e) => setBusiness(e.target.value as '' | 'nirvo-ai' | 'palmetto-home-care')}
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
               >
                 <option value="">None</option>
@@ -150,7 +149,7 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
               <label className="block text-sm font-medium mb-1">Energy Required</label>
               <select
                 value={energyRequired}
-                onChange={(e) => setEnergyRequired(e.target.value as any)}
+                onChange={(e) => setEnergyRequired(e.target.value as 'low' | 'medium' | 'high')}
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
               >
                 <option value="low">Low</option>

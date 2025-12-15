@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { WeekSchedule, ScheduledTask } from '@/lib/types';
+import { WeekSchedule } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { format } from 'date-fns';
 

@@ -1,5 +1,5 @@
 import { Task, EnergyLevel } from './types';
-import { differenceInDays, differenceInHours } from 'date-fns';
+import { differenceInHours } from 'date-fns';
 
 /**
  * Score a task based on multiple factors:
@@ -81,7 +81,6 @@ export function generatePlanExplanation(tasks: Task[]): string {
   }
 
   const topTask = tasks[0];
-  const score = scoreTask(topTask);
   const hoursUntilDeadline = differenceInHours(topTask.deadline, new Date());
 
   let explanation = `Your top priority is "${topTask.title}". `;

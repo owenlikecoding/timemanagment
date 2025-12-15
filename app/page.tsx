@@ -17,11 +17,12 @@ export default function Home() {
     if (savedTasks) {
       const parsed = JSON.parse(savedTasks);
       // Convert date strings back to Date objects
-      const tasksWithDates = parsed.map((task: any) => ({
+      const tasksWithDates = parsed.map((task: Task) => ({
         ...task,
         deadline: new Date(task.deadline),
         createdAt: new Date(task.createdAt),
       }));
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTasks(tasksWithDates);
     }
   }, []);

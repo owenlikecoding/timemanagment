@@ -4,11 +4,7 @@ import {
   addDays, 
   startOfWeek, 
   endOfWeek, 
-  setHours, 
-  setMinutes,
-  isBefore,
-  isAfter,
-  addMinutes
+  isBefore
 } from 'date-fns';
 
 /**
