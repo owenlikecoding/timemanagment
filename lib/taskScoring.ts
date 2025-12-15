@@ -110,7 +110,9 @@ export function generatePlanExplanation(tasks: Task[]): string {
   const cashTasks = tasks.filter(t => t.business === 'palmetto-home-care').length;
   const growthTasks = tasks.filter(t => t.business === 'nirvo-ai').length;
 
-  explanation += `\n\nYour schedule balances ${cashTasks} cash-generating tasks for Palmetto Home Care with ${growthTasks} long-term growth tasks for Nirvo AI, while respecting your locked school, practice, and sleep times.`;
+  explanation += `\n\nYour schedule balances ${cashTasks} cash-generating tasks for ` +
+    `Palmetto Home Care with ${growthTasks} long-term growth tasks for Nirvo AI, ` +
+    `while respecting your locked school, practice, and sleep times.`;
 
   return explanation;
 }

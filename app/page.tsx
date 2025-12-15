@@ -37,7 +37,7 @@ export default function Home() {
   const handleAddTask = (taskData: Omit<Task, 'id' | 'createdAt' | 'completed'>) => {
     const newTask: Task = {
       ...taskData,
-      id: `task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      id: `task-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`,
       createdAt: new Date(),
       completed: false,
     };
